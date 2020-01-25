@@ -157,8 +157,8 @@ public class Driver {
                         WebDriverManager.firefoxdriver().setup();
                         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
                         desiredCapabilities.setBrowserName(BrowserType.FIREFOX);
-                        driverPool.set(new RemoteWebDriver(new URL("http://ec2-54-198-132-149.compute-1.amazonaws.com:4444/wd/hub"), desiredCapabilities));
-                    } catch (Exception e) {
+                        driverPool.set(new RemoteWebDriver(new URL("http://ec2-3-95-21-133.compute-1.amazonaws.com:4444/wd/hub"), desiredCapabilities));
+                    } catch (Exception e) { //http://ec2-54-198-132-149.compute-1.amazonaws.com Vasyl's
                         e.printStackTrace();
                     }
                     break;
