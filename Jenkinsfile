@@ -12,12 +12,12 @@ node {
                 bat label: '', script: 'mvn clean test'
             }
         }
-​
+
 // generate report
         stage("Generate cucumber report"){
             cucumber fileIncludePattern: '**/*.json', sortingMethod: 'ALPHABETICAL'
         }
-​
+
 //send email
         stage("Send email"){
             emailext body:
