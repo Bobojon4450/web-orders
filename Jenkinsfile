@@ -3,7 +3,7 @@ node {
 // Select SCM: source code management
 ​
         stage("Pulling code from github") {
-           git 'https://github.com/CybertekSchool/summer-online2019-web-orders.git'
+           git 'https://github.com/Bobojon4450/web-orders.git'
         }
 ​
  // build
