@@ -20,7 +20,7 @@ public class ConfigurationReader {
                if exception occurs, code inside a catch block will be executed
                any class that is related to InputOutput produce checked exceptions
                without handling checked exception, you cannot run a code    */
-            FileInputStream fileInputStream = new FileInputStream("configuration.properties");
+            FileInputStream fileInputStream = new FileInputStream("config.properties");
             /*  initialize properties object  */
             configFile = new Properties();
             /* load configuration.properties file */

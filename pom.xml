@@ -44,11 +44,49 @@
             <version>3.7.1</version>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M4</version>
+                <configuration>
+                    <parallel>methods</parallel>
+                    <useUnlimitedThreads>true</useUnlimitedThreads>
+                    <includes>
+                        <include>**/CukesRunner.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>4.9.0</version>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>Cucumber HTML Reports</projectName>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+                            <inputDirectory>${project.build.directory}</inputDirectory>
+                            <jsonFiles>
+                                <param>**/cucumber*.json</param>
+                            </jsonFiles>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
 
-<!--Packaging convention is created based on group_id <groupId>com.web-orders</groupId> -->
-<!--com.web-orders.pages-->
-<!--com.web-orders.runners-->
-<!--com.web-orders.utilities-->
-<!--com.web-orders.step_definitions-->
+        <!--Packaging convention is created based on group_id <groupId>com.web-orders</groupId> -->
+        <!--com.web-orders.pages-->
+        <!--com.web-orders.runners-->
+        <!--com.web-orders.utilities-->
+        <!--com.web-orders.step_definitions-->
