@@ -53,6 +53,7 @@
                 <configuration>
                     <parallel>methods</parallel>
                     <useUnlimitedThreads>true</useUnlimitedThreads>
+                    <rerunFailingTestsCount>1</rerunFailingTestsCount>
                     <includes>
                         <include>**/CukesRunner.java</include>
                     </includes>
