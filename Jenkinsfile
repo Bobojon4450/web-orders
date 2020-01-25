@@ -1,12 +1,10 @@
 node {
-​
 // Select SCM: source code management
-​
         stage("Pulling code from github") {
            git 'https://github.com/Bobojon4450/web-orders.git'
         }
-​
- // build
+
+// build
         stage("Running tests") {
             if (isUnix()) {
                 sh label: '', script: 'mvn clean test'
