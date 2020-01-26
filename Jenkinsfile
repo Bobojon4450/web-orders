@@ -28,4 +28,8 @@ node {
             subject: 'Smoke test status: $BUILD_STATUS',
             to: 'bobojon.rva@gmail.com'
         }
+
+        stage("Send slack notification"){
+            slackSend channel: 'Adamsho', message: 'Smoke test status: $BUILD_STATUS'
+        }
 }
