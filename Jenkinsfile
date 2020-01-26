@@ -30,6 +30,6 @@ node {
         }
 
         stage("Send slack notification"){
-            slackSend channel: 'Adamsho', message: "Smoke test status: $BUILD_STATUS"
+            slackSend channel: 'Adamsho', message: "Smoke test status ${env.BUILD_STATUS}", username: 'Adamsho'
         }
 }
